@@ -19,8 +19,8 @@ def optimize_squad(players: pd.DataFrame, budget: int, starting_xi: bool=False, 
         prob += lpSum(x.values()) == SQUAD_SIZE
     for pos, limit in POSITION_LIMITS.items():
         prob += lpSum(x[pid] for pid in df[df["pos"]==pos]["id"]) <= (limit if not starting_xi else 11)
-    for t in df["team"].unique():
-        prob += lpSum(x[pid] for pid in df[df["team"]==t]["id"]) <= TEAM_LIMIT
+    for t in df["team_name"].unique():
+        prob += lpSum(x[pid] for pid in df[df["team_name"]==t]["id"]) <= TEAM_LIMIT
     if starting_xi:
         prob += lpSum(x[pid] for pid in df[df["pos"]=="GK"]["id"]) == 1
         prob += lpSum(x[pid] for pid in df[df["pos"]=="DEF"]["id"]) >= 3

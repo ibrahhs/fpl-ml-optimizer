@@ -1,5 +1,4 @@
 import requests
-
 BASE = "https://fantasy.premierleague.com/api"
 
 def get_bootstrap_static():
