@@ -1,14 +1,12 @@
-# FPL 25/26 Optimizer v3
+# FPL 25/26 Optimizer v4
 
-- Live FPL data (auto-updated for 25/26 via official public endpoints)
-- Single-GW optimizer + captain/vice
-- Multi-GW planner with horizon EP
-- Player ID directory (download)
-- Transfers vs current team: suggest best 1–2 moves by marginal EP gain
+- Fixes Multi-GW KeyError and adds safer handling.
+- Simple controls, four tabs: Optimizer, Multi-GW Planner, Player IDs, Transfers vs Team.
+- Download CSVs for players, chosen squad, and IDs.
 
-## Deploy
-Push files to GitHub (root), then deploy on Streamlit Community Cloud → `app.py`.
+**Deploy**
+Push to your GitHub repo root and deploy on Streamlit Community Cloud (main file: `app.py`).
 
-## Notes
+**Notes**
+- Uses public FPL endpoints so it stays current for 25/26.
 - Budget is in tenths (1000 = £100.0).
-- Chip logic kept heuristic for clarity. Extendable to multi-GW chip search.
